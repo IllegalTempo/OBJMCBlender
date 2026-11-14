@@ -9,12 +9,12 @@ Includes first-person held-item and third-person armor stand head previews.
 
 1. In Blender, open **Edit → Preferences → Get Extensions**.
 2. Open the menu at the upper right and choose **Install from Disk**.
-3. Choose `objmc_blender-0.4.2.zip`, then enable **OBJMC Blender** if necessary.
+3. Choose [`objmc_blender-0.4.2.zip`](dist/objmc_blender-0.4.2.zip), then enable **OBJMC Blender** if necessary.
 4. In the 3D View, press **N** and open the **OBJMC** tab.
 
 No separate Python, Pillow, network access, or objmc installation is needed.
 
-## Project types (0.4.0)
+## Project types
 
 Open **File > New > First Person OBJMC Project** or
 **File > New > Third Person OBJMC Project**. Each creates an empty project scene
@@ -54,15 +54,10 @@ perspective, camera framing, shading and overlays, including after a refresh.
 
 ## Export Resources (Minecraft Java 26.3)
 
-### Linked models (0.4.1)
+### Linked models
 
-**0.4.2 fixes a crash in 0.4.1 when exporting linked collection instances.**
-The mesh snapshot now retains stable original object IDs and copies instance
-transforms, then obtains evaluated geometry safely. It no longer retains Blender's
-temporary instance objects after dependency-graph iteration. The reported crash
-was reproduced from a saved linked-model scene in an isolated Blender 5.3 process.
-Integration coverage runs on Blender 5.1.2 and 5.3.0, including instance transforms,
-materials, animation, selection and viewport restoration.
+**Version 0.4.2 fixes a crash when exporting linked collection instances.**
+If you installed 0.4.1, update before exporting linked models.
 
 Selected linked collection instances are now exported along with selected meshes.
 Select the collection instance object in the scene together with any local meshes
@@ -135,17 +130,16 @@ an in-game test of this integration.
 
 ## First-person holding screen
 
-Version 0.3.1 separates obj-cubed and legacy preview transforms. The 26.3 preview
+The holding screen uses separate obj-cubed and legacy preview transforms. The 26.3 preview
 omits the old objmc X/Z flip and fixed 45-degree turn. It represents a stationary,
 fully equipped item. Match FOV and hand settings when comparing screenshots;
 Minecraft lighting, movement and shader effects can still differ.
-
 
 The first-person preview displays all meshes in the active source view layer,
 regardless of selection. Imported hands and sleeves are included with their skin
 materials. No plain block hand is generated. Click
 **Open / Refresh First-Person Preview** after changing your objects. Source
-selection is preserved; Export Resources still exports selected meshes only.
+selection is preserved; Export Resources still exports only selected meshes and selected collection instances.
 
 The preview preserves your overlay visibility when entering preview, so direct
 scene switching does not hide edit-mode vertices.
@@ -162,7 +156,7 @@ FOV is a preview control; it is not exported. Click
 Refresh after changing the source mesh, current animation frame or atlas image.
 Back to Model also restores the viewport's original viewing angle, position and zoom.
 Original meshes are not moved or edited. Export while in preview still uses the
-selected meshes from the source scene and view layer.
+selected meshes and collection instances from the source scene and view layer.
 
 This is an **approximate static idle-pose preview**, not Minecraft's renderer.
 Verify placement in the game. It does not simulate view bobbing, swinging,
@@ -238,7 +232,7 @@ preview with their skin texture. Legacy 64x32 skins are not supported.
 
 ## Export separate items from Blender Actions
 
-1. Select all meshes to include in each item. Open **Animation & Encoding** and
+1. Select all meshes and linked collection instances to include in each item. Open **Animation & Encoding** and
    enable **Export Action Clips**.
 2. Click **+** to add a clip. Enter a unique lowercase resource name, such as
    `idle` or `attack`.
@@ -254,9 +248,9 @@ preview with their skin texture. Legacy 64x32 skins are not supported.
 
 For an Item Path of `weapons/sword`, the clips become
 `<namespace>:weapons/sword/idle` and `<namespace>:weapons/sword/attack`.
-Each gets its own encoded PNG, model variants and (26.3) item definition.
-Enable both clips to export both; no datapack or automatic in-game clip switching
-is generated. With legacy export, create the corresponding item definitions yourself.
+Each gets its own encoded PNG and item definition for either target; 26.3 also
+writes display-context model variants. Enable both clips to export both; no datapack
+or automatic in-game clip switching is generated.
 
 Each clip switches one object's Action; one armature can drive multiple selected
 meshes. Other objects retain their current animation. NLA blending on the target
@@ -280,5 +274,3 @@ arm meshes (plus any other meshes you want included) for export. The Armature
 modifier is evaluated automatically, preserving stable animation topology.
 
 Re-import hands to get the new rig; previously imported meshes are not changed.
-#   O B J M C B l e n d e r  
- 
