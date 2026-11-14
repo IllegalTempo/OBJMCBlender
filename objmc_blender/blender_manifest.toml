@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+id = "objmc_blender"
+version = "0.4.2"
+name = "OBJMC Blender"
+tagline = "Export animated Minecraft resource packs and preview held items"
+maintainer = "OBJMCBLENDER contributors"
+type = "add-on"
+tags = ["Import-Export", "Game Engine"]
+blender_version_min = "5.1.0"
+license = ["SPDX:GPL-3.0-or-later"]
+
+[permissions]
+files = "Export resource pack folders chosen by the user"

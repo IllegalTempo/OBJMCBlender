@@ -1,0 +1,64 @@
+{
+  "repository": "https://github.com/Godlander/objmc",
+  "retrieved": "2026-11-12",
+  "ref": "main",
+  "source": "objmc_upstream.py",
+  "shader_files": [
+    {
+      "path": "objmc/assets/minecraft/shaders/core/armor.fsh",
+      "upstream_git_blob_sha": "186a35534a4b6630a701afbd7b90532434c5a39c"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/armor.vsh",
+      "upstream_git_blob_sha": "a0c735a822406d847871f6ee8ecc9c104c8d9097"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/entity.fsh",
+      "upstream_git_blob_sha": "406604a1218a63784fc730f15fb8ef126c1aef46"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/entity.vsh",
+      "upstream_git_blob_sha": "764de224463cdddba27036e3ca102fb10f9e16db"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/rendertype_armor_cutout_no_cull.json",
+      "upstream_git_blob_sha": "bfe09dabf396011faee6204f4dc0d7bea7c78232"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/rendertype_item_entity_translucent_cull.fsh",
+      "upstream_git_blob_sha": "324528d7fbb2bd4f94331d2f5a6b80bd277ff1a5"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/rendertype_item_entity_translucent_cull.vsh",
+      "upstream_git_blob_sha": "c3661687ecb87648ae2c6e3d0ab6c9a3b5fac338"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/terrain.fsh",
+      "upstream_git_blob_sha": "d070fe01add35b29c8a36f61d966dcea6843c017"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/core/terrain.vsh",
+      "upstream_git_blob_sha": "6b78334472f4a6e7e03c65e9fbc708f6d247b9db"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/include/objmc_armor.glsl",
+      "upstream_git_blob_sha": "56b2b1c4189391bdc1ca935c6939f92f1cac5161"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/include/objmc_light.glsl",
+      "upstream_git_blob_sha": "236c379fdf539bc741dc50869041c5271f943c56"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/include/objmc_main.glsl",
+      "upstream_git_blob_sha": "7f3f49805135c05a65c7265f190151c959f15a22"
+    },
+    {
+      "path": "objmc/assets/minecraft/shaders/include/objmc_tools.glsl",
+      "upstream_git_blob_sha": "8c9caa69452739b66868f150eee25b6e2bae2bf0"
+    }
+  ],
+  "patched_files": [
+    "objmc_blender/shaders/include/objmc_main.glsl"
+  ],
+  "notes": "Main branch snapshot, not a pinned release. Vendored source retained; regenerate with tools/adapt_encoder.py."
+}
